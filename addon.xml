@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.cinema.experience" name="Cinema Experience" version="1.0.0" provider-name="nuka1195">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+        <import addon="script.module.pysvn" version="2.4.0"/>
+        <import addon="plugin.video.movie.trailers" version="1.0.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="addon.py"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>Re-create a full movie theater experience.</summary>
+        <disclaimer>This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License *see license.txt</disclaimer>
+        <description>Play trailers, slideshows, intro videos, outro videos: To re-create a movie theater experience in the comfort of your home.</description>
+    </extension>
+</addon>
