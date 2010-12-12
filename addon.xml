@@ -4,6 +4,7 @@
         <import addon="xbmc.python" version="1.0"/>
         <import addon="script.module.pysvn" version="2.4.0"/>
         <import addon="plugin.video.movie.trailers" version="1.0.0"/>
+        <import addon="script.module.pysqlite" version="2.5.6"/>
     </requires>
     <extension point="xbmc.python.script" library="addon.py"/>
     <extension point="xbmc.addon.metadata">

@@ -5,7 +5,7 @@ __url__ = "http://code.google.com/p/xbmc-addons/"
 __svn_url__ = "http://xbmc-addons.googlecode.com/svn/trunk/scripts/Home%20Theater%20Experience"
 __version__ = "1.5.1c"
 __svn_revision__ = "$Revision: 1564 $"
-__XBMC_Revision__ = "21010"
+__XBMC_Revision__ = "34000"
 
 import xbmcgui, xbmc, os
 
@@ -43,3 +43,5 @@ if ( __name__ == "__main__" ):
     if ( _check_compatible() ):
         from resources.lib import xbmcscript_player as script
         script.Main()
+
+

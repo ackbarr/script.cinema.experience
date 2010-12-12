@@ -15,10 +15,11 @@ import xbmcgui
 import xbmc
 import xbmcaddon
 
+_A_ = xbmcaddon.Addon('script.cinema.experience')
 # language method
 _L_ = xbmc.getLocalizedString
 # settings method
-_S_ = xbmcaddon.Addon(id='script.cinema.experience').getSetting
+_S_ = _A_.getSetting
 
 # set proper message
 try:
@@ -37,7 +38,7 @@ from random import shuffle
 class Main:
     # base paths
     BASE_CACHE_PATH = os.path.join( xbmc.translatePath( "special://profile" ), "Thumbnails", "Video" )
-    BASE_CURRENT_SOURCE_PATH = os.path.join( xbmc.translatePath( "special://profile/" ), "addon_data", os.path.basename( os.getcwd() ) )
+    BASE_CURRENT_SOURCE_PATH = os.path.join( xbmc.translatePath( "special://profile/addon_data/" ), os.path.basename( _A_.getAddonInfo('path') ) )
 
     def __init__( self ):
         # if an arg was passed check it for ClearWatchedTrivia or ClearWatchedTrailers
@@ -397,7 +398,7 @@ class Main:
             print "MPAA", mpaa
             # import trivia module and execute the gui
             from resources.lib.xbmcscript_trivia import Trivia as Trivia
-            ui = Trivia( "script-HTExperience-trivia.xml", os.getcwd(), "default", "PAL", settings=settings, playlist=self.playlist, dialog=pDialog, mpaa=mpaa )
+            ui = Trivia( "script-HTExperience-trivia.xml", _A_.getAddonInfo('path'), "default", "PAL", settings=settings, playlist=self.playlist, dialog=pDialog, mpaa=mpaa )
             #ui.doModal()
             del ui
             # we need to activate the video window

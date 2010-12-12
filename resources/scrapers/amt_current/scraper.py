@@ -6,7 +6,7 @@ import sys
 import os
 
 import xbmc
-
+import xbmcaddon
 import time
 import re
 import urllib
@@ -14,7 +14,7 @@ from random import shuffle
 from xml.sax.saxutils import unescape
 
 __useragent__ = "QuickTime/7.2 (qtver=7.2;os=Windows NT 5.1Service Pack 3)"
-
+_A_ = xbmcaddon.Addon('script.cinema.experience')
 
 class _urlopener( urllib.FancyURLopener ):
     version = __useragent__
@@ -124,10 +124,11 @@ class _Parser:
 
 
 class Main:
+    print "Apple Movie Trailers current trailers scraper"
     # base url
     BASE_CURRENT_URL = "http://www.apple.com/trailers/home/xml/current%s.xml"
     # base paths
-    BASE_CURRENT_SOURCE_PATH = os.path.join( xbmc.translatePath( "special://profile/" ), "script_data", os.path.basename( os.getcwd() ) )
+    BASE_CURRENT_SOURCE_PATH = os.path.join( xbmc.translatePath( "special://profile/addon_data" ), os.path.basename( _A_.getAddonInfo('path') ) )
 
     def __init__( self, mpaa=None, genre=None, settings=None, movie=None ):
         self.mpaa = mpaa
